@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>TUMO Lisboa — Áreas de Estudo</title>
+  <style>
+    :root{
+      --bg: #0f1226;
+      --fg: #f4f7ff;
+      --muted: #b8c0ff;
+      --accent1: #6a5cff;
+      --accent2: #00e0ff;
+      --card: #171a36;
+      --glow: 0 0 40px rgba(0,224,255,0.25);
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
+      background: radial-gradient(1200px 600px at 10% -10%, #1a1f52 0%, transparent 60%),
+                  radial-gradient(900px 700px at 110% 10%, #0a6aff22 0%, transparent 60%),
+                  linear-gradient(180deg, #0b0d21 0%, var(--bg) 50%);
+      color:var(--fg); line-height:1.5;
+    }
+    header{
+      padding: clamp(2rem, 6vw, 6rem) clamp(1rem, 4vw, 3rem);
+      display:grid; gap:1.2rem; place-items:start;
+      position:relative; overflow:hidden;
+    }
+    .badge{display:inline-flex; gap:.5rem; align-items:center; padding:.4rem .7rem; border:1px solid #ffffff22; border-radius:999px; color:var(--muted); backdrop-filter: blur(6px);}
+    .badge::before{content:"✦"}
+    h1{font-size:clamp(2rem, 5.5vw, 4rem); margin:0; letter-spacing:.5px}
+    .subtitle{color:var(--muted); max-width:65ch}
+    .cta{
+      display:flex; gap:1rem; flex-wrap:wrap; margin-top:.5rem
+    }
+    .btn{
+      --shadow: 0 10px 30px -10px rgba(0,0,0,.6), 0 0 0 1px #ffffff13, var(--glow);
+      display:inline-flex; align-items:center; gap:.6rem; padding:.8rem 1rem; border-radius:14px; text-decoration:none; color:var(--fg);
+      background: linear-gradient(135deg, var(--accent1), var(--accent2)); box-shadow: var(--shadow);
+      transition: transform .2s ease, box-shadow .2s ease, filter .2s ease;
+    }
+    .btn:hover{ transform: translateY(-2px); filter: brightness(1.05); box-shadow: 0 16px 40px -10px rgba(0,0,0,.75), 0 0 0 1px #ffffff22, 0 0 60px rgba(0,224,255,0.35);}
+    .btn.secondary{ background: #ffffff10; color: var(--fg)}
+
+    .grid{
+      padding: clamp(1.5rem, 4vw, 3rem);
+      display:grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: clamp(1rem, 2.5vw, 2rem);
+      max-width: 1200px; margin: 0 auto 4rem;
+    }
+    .card{
+      background: linear-gradient(180deg, #1a1f3a 0%, var(--card) 40%);
+      border: 1px solid #ffffff14; border-radius: 18px; padding: 1.1rem; position:relative; overflow:hidden;
+      box-shadow: 0 8px 18px rgba(0,0,0,.35);
+      transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+      isolation:isolate;
+    }
+    .card:hover{ transform: translateY(-6px); box-shadow: 0 18px 40px rgba(0,0,0,.55), var(--glow); border-color:#ffffff22}
+
+    .icon{
+      font-size: 1.6rem; width: 2.4rem; height: 2.4rem; display:grid; place-items:center; border-radius:12px; background:#ffffff14; backdrop-filter: blur(6px); border:1px solid #ffffff22; box-shadow: inset 0 0 30px #00000022;
+    }
+    .title{font-weight:700; font-size:1.15rem; margin:.8rem 0 .2rem}
+    .desc{color:var(--muted); font-size:.96rem}
+
+    .tags{display:flex; flex-wrap:wrap; gap:.4rem; margin-top:.8rem}
+    .tag{font-size:.75rem; color:#bcd; border:1px solid #ffffff22; padding:.2rem .55rem; border-radius:999px; background:#ffffff08}
+
+    footer{padding: 2rem 1.5rem 4rem; color:#a9b0ff88; text-align:center}
+
+    /* simple floating orbs for fun */
+    .orb{ position:absolute; border-radius:50%; filter: blur(18px); opacity:.55; pointer-events:none; mix-blend-mode:screen;}
+    .orb.one{ width:380px; height:380px; background: radial-gradient(circle at 30% 30%, #6a5cff, transparent 60%); top:-120px; right:-80px; animation: float 12s ease-in-out infinite}
+    .orb.two{ width:260px; height:260px; background: radial-gradient(circle at 70% 70%, #00e0ff, transparent 60%); bottom:-60px; left:-60px; animation: float 16s ease-in-out infinite reverse}
+    @keyframes float{ 0%,100%{ transform: translateY(0) } 50%{ transform: translateY(-18px) }}
+
+    /* responsive niceties */
+    @media (max-width: 520px){ .subtitle{ font-size: .98rem } }
+  </style>
+</head>
+<body>
+  <header>
+    <span class="badge">TUMO Lisboa</span>
+    <h1>Áreas de Estudo — Criatividade + Tecnologia</h1>
+    <p class="subtitle">Descobre as áreas criativas e tecnológicas em que os jovens do TUMO Lisboa podem mergulhar. Clica em cada cartão para saber mais (exemplos e ideias do que dá para criar!).</p>
+    <div class="cta">
+      <a class="btn" href="#areas">Explorar áreas</a>
+      <a class="btn secondary" href="mailto:lisboa@tumo.pt">Quero saber mais</a>
+    </div>
+    <div class="orb one"></div>
+    <div class="orb two"></div>
+  </header>
+
+  <main id="areas" class="grid">
+    <!-- Programação -->
+    <article class="card" tabindex="0">
+      <div class="icon">💻</div>
+      <h2 class="title">Programação</h2>
+      <p class="desc">Aprende a pensar como desenvolvedor(a) e cria apps, jogos e ferramentas que resolvem problemas reais.</p>
+      <div class="tags"><span class="tag">Algoritmos</span><span class="tag">Web</span><span class="tag">Python/JS</span></div>
+    </article>
+
+    <!-- Desenvolvimento de Jogos -->
+    <article class="card" tabindex="0">
+      <div class="icon">🎮</div>
+      <h2 class="title">Desenvolvimento de Jogos</h2>
+      <p class="desc">Design de mecânicas, prototipagem e publicação de jogos 2D/3D em motores populares.</p>
+      <div class="tags"><span class="tag">Gameplay</span><span class="tag">Level Design</span><span class="tag">Prototipagem</span></div>
+    </article>
+
+    <!-- Animação -->
+    <article class="card" tabindex="0">
+      <div class="icon">🎞️</div>
+      <h2 class="title">Animação</h2>
+      <p class="desc">Do storyboard ao movimento: personagens, cenários e efeitos para contar histórias inesquecíveis.</p>
+      <div class="tags"><span class="tag">2D/3D</span><span class="tag">Storyboard</span><span class="tag">Timing</span></div>
+    </article>
+
+    <!-- Cinema / Realização -->
+    <article class="card" tabindex="0">
+      <div class="icon">🎬</div>
+      <h2 class="title">Produção Cinematográfica</h2>
+      <p class="desc">Escrita, captação, iluminação e edição para criar curtas, documentários e vídeos criativos.</p>
+      <div class="tags"><span class="tag">Direção</span><span class="tag">Edição</span><span class="tag">Som</span></div>
+    </article>
+
+    <!-- Fotografia -->
+    <article class="card" tabindex="0">
+      <div class="icon">📷</div>
+      <h2 class="title">Fotografia</h2>
+      <p class="desc">Composição, luz e pós‑produção para transformar olhares em imagens poderosas.</p>
+      <div class="tags"><span class="tag">Composição</span><span class="tag">Retrato</span><span class="tag">Edição</span></div>
+    </article>
+
+    <!-- Design Gráfico -->
+    <article class="card" tabindex="0">
+      <div class="icon">🎨</div>
+      <h2 class="title">Design Gráfico</h2>
+      <p class="desc">Identidades visuais, posters e layouts usando tipografia, cor e hierarquia com propósito.</p>
+      <div class="tags"><span class="tag">Tipografia</span><span class="tag">Branding</span><span class="tag">Layout</span></div>
+    </article>
+
+    <!-- Modelação 3D -->
+    <article class="card" tabindex="0">
+      <div class="icon">🧊</div>
+      <h2 class="title">Modelação 3D</h2>
+      <p class="desc">Cria objetos e mundos tridimensionais para jogos, animação e experiências imersivas.</p>
+      <div class="tags"><span class="tag">Escultura</span><span class="tag">Texturas</span><span class="tag">Render</span></div>
+    </article>
+
+    <!-- Música -->
+    <article class="card" tabindex="0">
+      <div class="icon">🎧</div>
+      <h2 class="title">Música</h2>
+      <p class="desc">Produção, síntese e trilhas sonoras para cinema, jogos e experiências interativas.</p>
+      <div class="tags"><span class="tag">Produção</span><span class="tag">Sound Design</span><span class="tag">Mix</span></div>
+    </article>
+
+    <!-- Robótica -->
+    <article class="card" tabindex="0">
+      <div class="icon">🤖</div>
+      <h2 class="title">Robótica</h2>
+      <p class="desc">Constrói e programa máquinas inteligentes que interagem com o mundo físico.</p>
+      <div class="tags"><span class="tag">Sensores</span><span class="tag">Arduino</span><span class="tag">Automação</span></div>
+    </article>
+
+  </main>
+
+  <footer>
+    <p>Projeto de demonstração não-oficial — inspirado nas áreas de estudo do TUMO. Esta página foi criada para fins educativos.</p>
+  </footer>
+</body>
+</html>
