@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Programação Web — TUMO Lisboa</title>
+  <style>
+    :root{
+      --bg: #0f1226;
+      --fg: #f4f7ff;
+      --muted: #b8c0ff;
+      --accent1: #6a5cff;
+      --accent2: #00e0ff;
+      --card: #171a36;
+      --glow: 0 0 40px rgba(0,224,255,0.25);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, sans-serif;
+      background: linear-gradient(180deg, #0b0d21 0%, var(--bg) 100%);
+      color: var(--fg);
+      line-height: 1.6;
+      padding: 2rem clamp(1rem, 4vw, 3rem);
+    }
+    h1 {
+      font-size: clamp(2rem, 5vw, 3rem);
+      margin-bottom: 1rem;
+    }
+    .intro {
+      color: var(--muted);
+      max-width: 60ch;
+      margin-bottom: 2.5rem;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+    }
+    .media {
+      background: var(--card);
+      border: 1px solid #ffffff22;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+      aspect-ratio: 16 / 9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+    .media img, .media video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    a.back {
+      display: inline-block;
+      margin-top: 3rem;
+      text-decoration: none;
+      color: var(--accent2);
+      border: 1px solid #00e0ff44;
+      padding: .6rem 1rem;
+      border-radius: 8px;
+      transition: background .2s ease, color .2s ease;
+    }
+    a.back:hover {
+      background: var(--accent2);
+      color: #000;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Programação Web</h1>
+  <p class="intro">
+    Durante o módulo de Programação Web no TUMO Lisboa, exploramos conceitos fundamentais como HTML, CSS e JavaScript, desenvolvendo projetos interativos que resolvem problemas reais. Nós aprendemos a construir páginas responsivas, entendemos como a web funciona e praticamos lógica de programação com desafios progressivos.
+  </p>
+
+  <section class="gallery">
+    <!-- Substitua os blocos abaixo por imagens ou vídeos reais -->
+    <div class="media">Espaço reservado para imagem</div>
+    <div class="media">Espaço reservado para vídeo</div>
+    <div class="media">Espaço reservado para imagem</div>
+  </section>
+
+  <a href="index.html" class="back">← Voltar para áreas de estudo</a>
+
+</body>
+</html>
