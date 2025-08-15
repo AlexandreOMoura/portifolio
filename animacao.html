@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Animação — TUMO Lisboa</title>
+  <style>
+    :root {
+      --bg: #0f1226;
+      --fg: #f4f7ff;
+      --muted: #b8c0ff;
+      --accent2: #00e0ff;
+      --card: #171a36;
+    }
+    body {
+      margin: 0;
+      font-family: system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--fg);
+      padding: 2rem;
+      line-height: 1.6;
+    }
+    h1 { font-size: 2rem; margin-bottom: 1rem; }
+    .intro { color: var(--muted); max-width: 60ch; margin-bottom: 2rem; }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+    .media {
+      background: var(--card);
+      border-radius: 12px;
+      padding: 1rem;
+      text-align: center;
+      color: var(--muted);
+      aspect-ratio: 16/9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .back {
+      display: inline-block;
+      margin-top: 2rem;
+      color: var(--accent2);
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Animação</h1>
+  <p class="intro">
+    Na animação, eu aprendi a dar movimento às minhas ideias. Desde o storyboard até a animação final, entendi como contar histórias visuais, criando personagens e cenários que se movem com propósito.
+  </p>
+
+  <section class="gallery">
+    <div class="media">Espaço reservado para imagem</div>
+    <div class="media">Espaço reservado para vídeo</div>
+  </section>
+
+  <a href="index.html" class="back">← Voltar para áreas</a>
+
+</body>
+</html>
